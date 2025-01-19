@@ -13,10 +13,8 @@ function UserProfile () {
         const fetchData = async () => {
             try {
                 const response = await api.get("/me");
-                console.log(response.data.message.username)
                 setInfo(response.data.message.username)
             }catch(error) {
-                console.log(error)
                 alert(error.response?.data?.message || 'Failed to fetch user data');
             }
         };
